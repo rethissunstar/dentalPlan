@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Chris Teeth Plan</title>
+  </head>
+  <body>
+    <header>
+      <section class="title">My Teeth</section>
+      <section class="nav">
+        <a href="./pages/topFront.html"
+          ><img src="./assets/srcpics/topFront.png" alt="topFront"
+        /></a>
+        <img src="./assets/srcpics/topRight.png" alt="topRight" />
+        <img src="./assets/srcpics/topLeft.png" alt="topLeft" />
+        <img src="" alt="botFront" />
+        <img src="" alt="botLeft" />
+        <img src="" alt="botRight" />
+      </section>
+    </header>
+    <section class="main">
+      <section class="card">
+        <section>My Next Appointment</section>
+        <section class="appoint">Mon Oct 23rd, 2023</section>
+        <section class="nextUp">
+          <input type="datetime-local" id="data" />
+        </section>
+      </section>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const dateTimePicker = document.getElementById("data");
+        const appointmentText = document.querySelector(".appoint");
+
+        // JavaScript function to update the appointment date and time
+        function updateAppointmentDateTime() {
+          // Get the selected date and time from the datetime picker
+          const selectedDateTime = new Date(dateTimePicker.value);
+
+          // Format the date and time into "Monday Oct 20th 2023 @ 2:35pm" format
+          const formattedDate = selectedDateTime.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          });
+
+          // Update the text in the "appoint" class
+          appointmentText.textContent = formattedDate;
+
+          // Save the selected date and time to local storage
+          localStorage.setItem("selectedDateTime", selectedDateTime);
+        }
+
+        // Add an event listener to call the function when the date and time change
+        dateTimePicker.addEventListener("change", updateAppointmentDateTime);
+
+        // Retrieve the selected date and time from local storage when the page loads
+        const storedDateTime = localStorage.getItem("selectedDateTime");
+        if (storedDateTime) {
+          const parsedDateTime = new Date(storedDateTime);
+          const formattedDate = parsedDateTime.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            hour12: true,
+          });
+          appointmentText.textContent = formattedDate;
+          dateTimePicker.value = storedDateTime;
+        }
+      });
+    </script>
+  </body>
+</html>
