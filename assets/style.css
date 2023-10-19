@@ -10,7 +10,7 @@ header {
   border: 1px solid darkblue;
   /* background-color: lightskyblue; */
   border-radius: 10px;
-  height: 200px;
+  height: 300px;
   justify-content: space-between;
   align-items: center;
 }
