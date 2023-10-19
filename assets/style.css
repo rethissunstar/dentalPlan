@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  padding: 5px;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid darkblue;
+  /* background-color: lightskyblue; */
+  border-radius: 10px;
+  height: 200px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 0) and (max-width: 1000px) {
+  body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(./srcpics/mrsTooth.png);
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+  }
+  .title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: darkblue;
+    font-size: 20pt;
+    font-weight: 600;
+    width: 30%;
+    text-align: center;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    opacity: 80%;
+  }
+  .nav img {
+    height: 100px;
+  }
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 25pt;
+  }
+  .card {
+    /* background-color: beige; */
+    height: 300px;
+    width: 100%;
+    border: 2px solid black;
+    color: black;
+
+    border-radius: 10px;
+  }
+  .appoint {
+    font-size: 40pt;
+    color: darkgreen;
+    font-weight: 600;
+  }
+  .nextUp {
+    height: 100px;
+  }
+  input[type="datetime-local"] {
+    width: 200px; /* Set the width as per your preference */
+    height: 100px; /* Set the height as per your preference */
+    font-size: 20pt;
+  }
+}
