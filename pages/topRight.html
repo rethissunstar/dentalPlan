@@ -47,14 +47,18 @@
             src="../assets/srcpics/Top2Right/18MolarTopLeft.png"
             alt="Top Left Molar"
           />
-          <section class="price">
-            Price: $0000.00
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-              asperiores ex eos alias sint quis tempora quo laborum libero,
-              doloribus a? Sapiente provident perferendis dolore vitae nisi
-              commodi ipsa fugiat?
-            </p>
+          <section class="rcard">
+            <section class="price">
+              <p>Price: $0000.00</p>
+            </section>
+            <section class="descript2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                asperiores ex eos alias sint quis tempora quo laborum libero,
+                doloribus a? Sapiente provident perferendis dolore vitae nisi
+                commodi ipsa fugiat?
+              </p>
+            </section>
             <p>
               <button>Edit</button>
             </p>
@@ -62,9 +66,18 @@
         </section>
         <section class="form TLMolar18">
           <form action="submit">
-            <p><input type="text" id="TLMolarPrice18" placeholder="Price" /></p>
             <p>
-              <input type="text" id="TLMolarDesc18" placeholder="description" />
+              <input type="text" id="TLMolarPrice18" placeholder="Price" />
+            </p>
+            <p>
+              <textarea
+                name=""
+                id="TLMolarDesc18"
+                cols="30"
+                rows="10"
+                wrap="hard"
+                placeholder="description"
+              ></textarea>
             </p>
             <button class="updateTooth">Update</button>
           </form>
@@ -73,17 +86,67 @@
     </section>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Get a reference to the button
-        const button = document.querySelector(".toothCard .price button");
+        // Get references to the input elements for price and description
+        const priceInput = document.getElementById("TLMolarPrice18");
+        const descriptionInput = document.getElementById("TLMolarDesc18");
 
-        // Get a reference to the TLMolar18 section
-        const sectionTLMolar18 = document.querySelector(".form.TLMolar18");
+        // Get references to the price and description display elements
+        const priceDisplay = document.querySelector(".price p");
+        const descriptionDisplay = document.querySelector(".descript2 p");
 
-        // Add a click event listener to the button
-        button.addEventListener("click", function () {
-          // Toggle the visibility of the TLMolar18 section when the button is clicked
-          sectionTLMolar18.style.display =
-            sectionTLMolar18.style.display === "block" ? "none" : "block";
+        // Retrieve the saved data from local storage when the page loads
+        const savedPrice = localStorage.getItem("TLMolarPrice18");
+        const savedDescription = localStorage.getItem("TLMolarDesc18");
+
+        if (savedPrice) {
+          // Update the input field with the saved price
+          priceInput.value = savedPrice;
+          // Update the price display
+          priceDisplay.textContent = `Price: $${savedPrice}`;
+        }
+
+        if (savedDescription) {
+          // Update the input field with the saved description
+          descriptionInput.value = savedDescription;
+          // Update the description display
+          descriptionDisplay.textContent = savedDescription;
+        }
+
+        // Add a click event listener to the "Edit" button
+        const editButton = document.querySelector(".toothCard button");
+        editButton.addEventListener("click", function () {
+          // Toggle the visibility of the form when the button is clicked
+          const form = document.querySelector(".form.TLMolar18");
+          form.style.display = form.style.display === "none" ? "block" : "none";
+        });
+
+        // Get a reference to the form element
+        const form = document.querySelector(".form.TLMolar18");
+
+        // Add a submit event listener to the form
+        form.addEventListener("submit", function (event) {
+          // Prevent the form from submitting to another page
+          event.preventDefault();
+
+          // Update the price and description with the values from the input fields
+          const newPrice = priceInput.value;
+          const newDescription = descriptionInput.value;
+
+          // Save the updated data to local storage
+          localStorage.setItem("TLMolarPrice18", newPrice);
+          localStorage.setItem("TLMolarDesc18", newDescription);
+
+          // You can perform additional logic here, e.g., displaying a success message
+          console.log("Data updated and saved to local storage.");
+
+          // Update the displayed price text
+          priceDisplay.textContent = `Price: $${newPrice}`;
+
+          // Update the displayed description text
+          descriptionDisplay.textContent = newDescription;
+
+          // Hide the form section
+          form.style.display = "none";
         });
       });
     </script>
