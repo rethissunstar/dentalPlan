@@ -201,6 +201,15 @@
   .descript img {
     height: 200px;
   }
+  /* This if the form control section */
+  .TLMolar18 {
+    display: none;
+    text-align: center;
+    font-size: 20pt;
+  }
+  #TLMolarDesc18 {
+    height: 300px;
+  }
   .appoint {
     font-size: 40pt;
     color: darkgreen;
@@ -301,6 +310,15 @@
   }
   .descript img {
     height: 200px;
+  }
+  /* This if the form control section */
+  .TLMolar18 {
+    display: none;
+    text-align: center;
+    font-size: 20pt;
+  }
+  #TLMolarDesc18 {
+    height: 300px;
   }
   .appoint {
     font-size: 40pt;
