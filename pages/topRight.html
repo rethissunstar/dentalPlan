@@ -38,7 +38,7 @@
       </section>
     </header>
     <section class="mainEl">
-      <section class="toothCard">
+      <section class="toothCard" id="card1">
         <section class="toothTitle">
           <p>name of tooth</p>
         </section>
@@ -67,12 +67,12 @@
         <section class="form TLMolar18">
           <form action="submit">
             <p>
-              <input type="text" id="TLMolarPrice18" placeholder="Price" />
+              <input type="text" id="TLMolar18Price" placeholder="Price" />
             </p>
             <p>
               <textarea
                 name=""
-                id="TLMolarDesc18"
+                id="TLMolar18Desc"
                 cols="30"
                 rows="10"
                 wrap="hard"
@@ -83,7 +83,7 @@
           </form>
         </section>
       </section>
-      <section class="toothCard">
+      <section class="toothCard" id="card2">
         <section class="toothTitle">
           <p>name of tooth</p>
         </section>
@@ -112,12 +112,12 @@
         <section class="form TLMolar17">
           <form action="submit">
             <p>
-              <input type="text" id="TLMolarPrice17" placeholder="Price" />
+              <input type="text" id="TLMolar17Price" placeholder="Price" />
             </p>
             <p>
               <textarea
                 name=""
-                id="TLMolarDesc17"
+                id="TLMolar17Desc"
                 cols="30"
                 rows="10"
                 wrap="hard"
@@ -128,72 +128,148 @@
           </form>
         </section>
       </section>
+      <!-- card3 -->
+      <section class="toothCard" id="card3">
+        <section class="toothTitle">
+          <p>name of tooth</p>
+        </section>
+        <section class="descript">
+          <img
+            src="../assets/srcpics/Top2Right/16MolarTopLeft.png"
+            alt="Top Left Molar"
+          />
+          <section class="rcard">
+            <section class="price">
+              <p>Price: $0000.00</p>
+            </section>
+            <section class="descript2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                asperiores ex eos alias sint quis tempora quo laborum libero,
+                doloribus a? Sapiente provident perferendis dolore vitae nisi
+                commodi ipsa fugiat?
+              </p>
+            </section>
+            <p>
+              <button>Edit</button>
+            </p>
+          </section>
+        </section>
+        <section class="form TLMolar16">
+          <form action="submit">
+            <p>
+              <input type="text" id="TLMolar16Price" placeholder="Price" />
+            </p>
+            <p>
+              <textarea
+                name=""
+                id="TLMolar16Desc"
+                cols="30"
+                rows="10"
+                wrap="hard"
+                placeholder="description"
+              ></textarea>
+            </p>
+            <button class="updateTooth">Update</button>
+          </form>
+        </section>
+      </section>
+      <!-- end of card 3 -->
+      <!-- card4 -->
+      <section class="toothCard" id="card4">
+        <section class="toothTitle">
+          <p>name of tooth</p>
+        </section>
+        <section class="descript">
+          <img
+            src="../assets/srcpics/Top2Right/15bicuspidTopLeft.png"
+            alt="Top Left Molar"
+          />
+          <section class="rcard">
+            <section class="price">
+              <p>Price: $0000.00</p>
+            </section>
+            <section class="descript2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                asperiores ex eos alias sint quis tempora quo laborum libero,
+                doloribus a? Sapiente provident perferendis dolore vitae nisi
+                commodi ipsa fugiat?
+              </p>
+            </section>
+            <p>
+              <button>Edit</button>
+            </p>
+          </section>
+        </section>
+        <section class="form TLBicusp15">
+          <form action="submit">
+            <p>
+              <input type="text" id="TLBicusp15Price" placeholder="Price" />
+            </p>
+            <p>
+              <textarea
+                name=""
+                id="TLBicusp15Desc"
+                cols="30"
+                rows="10"
+                wrap="hard"
+                placeholder="description"
+              ></textarea>
+            </p>
+            <button class="updateTooth">Update</button>
+          </form>
+        </section>
+      </section>
+      <!-- end of card 4 -->
+      <!-- card5 -->
+      <section class="toothCard" id="card5">
+        <section class="toothTitle">
+          <p>name of tooth</p>
+        </section>
+        <section class="descript">
+          <img
+            src="../assets/srcpics/Top2Right/14bicuspidTopFrontLeft.png"
+            alt="Top Left Molar"
+          />
+          <section class="rcard">
+            <section class="price">
+              <p>Price: $0000.00</p>
+            </section>
+            <section class="descript2">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                asperiores ex eos alias sint quis tempora quo laborum libero,
+                doloribus a? Sapiente provident perferendis dolore vitae nisi
+                commodi ipsa fugiat?
+              </p>
+            </section>
+            <p>
+              <button>Edit</button>
+            </p>
+          </section>
+        </section>
+        <section class="form TLBicusp14">
+          <form action="submit">
+            <p>
+              <input type="text" id="TLBicusp14Price" placeholder="Price" />
+            </p>
+            <p>
+              <textarea
+                name=""
+                id="TLBicusp14Desc"
+                cols="30"
+                rows="10"
+                wrap="hard"
+                placeholder="description"
+              ></textarea>
+            </p>
+            <button class="updateTooth">Update</button>
+          </form>
+        </section>
+      </section>
+      <!-- end of card 5 -->
     </section>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Get references to the input elements for price and description
-        const priceInput = document.getElementById("TLMolarPrice18");
-        const descriptionInput = document.getElementById("TLMolarDesc18");
-
-        // Get references to the price and description display elements
-        const priceDisplay = document.querySelector(".price p");
-        const descriptionDisplay = document.querySelector(".descript2 p");
-
-        // Retrieve the saved data from local storage when the page loads
-        const savedPrice = localStorage.getItem("TLMolarPrice18");
-        const savedDescription = localStorage.getItem("TLMolarDesc18");
-
-        if (savedPrice) {
-          // Update the input field with the saved price
-          priceInput.value = savedPrice;
-          // Update the price display
-          priceDisplay.textContent = `Price: $${savedPrice}`;
-        }
-
-        if (savedDescription) {
-          // Update the input field with the saved description
-          descriptionInput.value = savedDescription;
-          // Update the description display
-          descriptionDisplay.textContent = savedDescription;
-        }
-
-        // Add a click event listener to the "Edit" button
-        const editButton = document.querySelector(".toothCard button");
-        editButton.addEventListener("click", function () {
-          // Toggle the visibility of the form when the button is clicked
-          const form = document.querySelector(".form.TLMolar18");
-          form.style.display = form.style.display === "none" ? "block" : "none";
-        });
-
-        // Get a reference to the form element
-        const form = document.querySelector(".form.TLMolar18");
-
-        // Add a submit event listener to the form
-        form.addEventListener("submit", function (event) {
-          // Prevent the form from submitting to another page
-          event.preventDefault();
-
-          // Update the price and description with the values from the input fields
-          const newPrice = priceInput.value;
-          const newDescription = descriptionInput.value;
-
-          // Save the updated data to local storage
-          localStorage.setItem("TLMolarPrice18", newPrice);
-          localStorage.setItem("TLMolarDesc18", newDescription);
-
-          // You can perform additional logic here, e.g., displaying a success message
-          console.log("Data updated and saved to local storage.");
-
-          // Update the displayed price text
-          priceDisplay.textContent = `Price: $${newPrice}`;
-
-          // Update the displayed description text
-          descriptionDisplay.textContent = newDescription;
-
-          // Hide the form section
-          form.style.display = "none";
-        });
-      });
-    </script>
+    <script src="../assets/srcjs/topRight.js"></script>
   </body>
 </html>
